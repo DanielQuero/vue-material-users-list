@@ -1,0 +1,67 @@
+@import ./variables.sass
+@import ./flexbox-helpers.sass
+
+#app
+  background: var(--app-background)
+  // height: 100%
+
+
+// ------------ < helper classes > -----------
+.capitalize-text
+  text-transform: capitalize !important
+.controls-icons-box
+  display: flex
+.control-icon
+  width: 20px !important
+  height: 20px !important
+  transition: .3s
+  margin: 0px 5px
+  &:hover:not(.not-hoverable)
+    opacity: 0.5
+    transition: .3s
+    cursor: pointer
+  &.big-control-icon
+    width: 25px !important
+    height: 25px !important
+.max-width
+  width: 100% !important
+.centered
+  text-align: center
+.fake-space-right
+  margin-right: 5px
+.fake-space-left
+  margin-left: 5px
+// ------------ </ helper classes > -----------
+
+// ------------ < .containers > ------------
+.app-main, .full-layout
+  display: flex
+  flex-direction: row
+  display: flex
+  justify-content: center
+  color: var(--font-color)
+  &.app-main-with-topbar
+    min-height: calc(100vh - var(--topbar-height)) !important
+    min-height: 100vh !important
+
+.app-main
+  min-height: calc(100vh - 60px) !important
+
+  .container, .bigger-container
+    padding: 15px 20px
+    margin: 0px
+  .container
+    width: 900px
+    min-width: 320px
+    transition: .3s
+  .bigger-container
+    width: 1280px
+    min-width: 320px
+    transition: .3s
+
+@media (max-width: $breakpoint-phones)
+  .container
+    padding: 15px 10px !important
+  .bigger-container
+    padding: 15px 10px !important
+// ------------ </ .containers > -----------
